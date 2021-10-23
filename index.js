@@ -16,8 +16,8 @@ var object2 = new (function () {
 console.log('==========>', object2);
 
 // Call, Apply and Bind
-var employee1 = { firstName: 'Ugra', lastName: 'Vellai' };
-var employee2 = { firstName: 'Rithu', lastName: 'Vellai' };
+var person1 = { firstName: 'Ugra', lastName: 'Vellai' };
+var person2 = { firstName: 'Rithu', lastName: 'Vellai' };
 
 // call
 function funCall(greeting1, greeting2) {
@@ -26,8 +26,8 @@ function funCall(greeting1, greeting2) {
   );
 }
 
-funCall.call(employee1, 'Hello', 'How are you?');
-funCall.call(employee2, 'Hello', 'How are you?');
+funCall.call(person1, 'Hello', 'How are you?');
+funCall.call(person2, 'Hello', 'How are you?');
 
 // Apply
 function funcApply(greeting1, greeting2) {
@@ -36,8 +36,8 @@ function funcApply(greeting1, greeting2) {
   );
 }
 
-funcApply.apply(employee1, ['Hello', 'How are you?']);
-funcApply.apply(employee2, ['Hello', 'How are you?']);
+funcApply.apply(person1, ['Hello', 'How are you?']);
+funcApply.apply(person2, ['Hello', 'How are you?']);
 
 // Bind
 function funcBind(greeting1, greeting2) {
@@ -46,10 +46,31 @@ function funcBind(greeting1, greeting2) {
   );
 }
 
-var inviteEmployee1 = funcBind.bind(employee1);
-var inviteEmployee2 = funcBind.bind(employee2);
-inviteEmployee1('Hello', 'How are you?');
-inviteEmployee2('Hello', 'How are you?');
+var bindPerson1 = funcBind.bind(person1);
+var bindPerson2 = funcBind.bind(person2);
+bindPerson1('Hello', 'How are you?');
+bindPerson2('Hello', 'How are you?');
+
+// First order function
+const firstOrder = () => console.log('I am a first order function!');
+firstOrder();
+
+// Higher order function
+const firstOrderFunc = () => console.log('Hello, I am a Higher order function');
+const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
+higherOrder(firstOrderFunc);
+
+// Unary function
+const unaryFunction = (a) => console.log(a + 10);
+unaryFunction(10);
+
+// Currying function
+const multiArgFunction = (a, b, c) => a + b + c;
+console.log(multiArgFunction(1, 2, 3));
+const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+curryUnaryFunction(1);
+curryUnaryFunction(1)(2);
+curryUnaryFunction(1)(2)(3);
 
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
