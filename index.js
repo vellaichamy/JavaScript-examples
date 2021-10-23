@@ -68,9 +68,12 @@ unaryFunction(10);
 const multiArgFunction = (a, b, c) => a + b + c;
 console.log(multiArgFunction(1, 2, 3));
 const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
-curryUnaryFunction(1);
-curryUnaryFunction(1)(2);
-curryUnaryFunction(1)(2)(3);
+console.log(curryUnaryFunction(1));
+console.log(curryUnaryFunction(1)(2)(8));
+console.log(curryUnaryFunction(1)(2)(3));
+console.log(curryUnaryFunction(2)(4)(6));
+
+// Pure function
 
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
