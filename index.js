@@ -118,5 +118,18 @@ const addition = memoizAddition();
 console.log(addition(10));
 console.log(addition(10));
 
+// classes
+
+class car{
+  constructor(color, model) {
+    this.color= color;
+    this.model= model;
+  }
+
+  getDetails() {
+    return this.model + ' bike has' + this.color + ' color';
+  }
+}
+
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
