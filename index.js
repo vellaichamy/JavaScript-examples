@@ -120,16 +120,49 @@ console.log(addition(10));
 
 // classes
 
-class car{
+class car {
   constructor(color, model) {
-    this.color= color;
-    this.model= model;
+    this.color = color;
+    this.model = model;
   }
 
   getDetails() {
-    return this.model + ' bike has' + this.color + ' color';
+    return this.model + ' car has' + this.color + ' color';
   }
 }
+
+// A callback function is a function passed into another function as an argument. This function is invoked inside the outer function to complete an action. Let's take a simple example of how to use callback function
+
+function callbackFunction(name) {
+  console.log('Hello ' + name);
+}
+
+function outerFunction(callback) {
+  let name ='Ugra';
+  callback(name);
+}
+
+outerFunction(callbackFunction);
+
+// The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events. 
+
+function firstFunction(){
+  // Simulate a code delay
+  setTimeout( function(){
+    console.log('First function called');
+  }, 1000 );
+}
+function secondFunction(){
+  console.log('Second function called');
+}
+firstFunction();
+secondFunction();
+
+
+// Second function called
+// First function called
+
+
 
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
