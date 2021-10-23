@@ -158,11 +158,17 @@ function secondFunction(){
 firstFunction();
 secondFunction();
 
+// Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read and debug when dealing with asynchronous logic.
 
-// Second function called
-// First function called
-
-
+// async1(function(){
+//   async2(function(){
+//       async3(function(){
+//           async4(function(){
+//              // ....
+//           });
+//       });
+//   });
+// });
 
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
