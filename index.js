@@ -138,21 +138,21 @@ function callbackFunction(name) {
 }
 
 function outerFunction(callback) {
-  let name ='Ugra';
+  let name = 'Ugra';
   callback(name);
 }
 
 outerFunction(callbackFunction);
 
-// The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events. 
+// The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events.
 
-function firstFunction(){
+function firstFunction() {
   // Simulate a code delay
-  setTimeout( function(){
+  setTimeout(function () {
     console.log('First function called');
-  }, 1000 );
+  }, 1000);
 }
-function secondFunction(){
+function secondFunction() {
   console.log('Second function called');
 }
 firstFunction();
@@ -170,5 +170,9 @@ secondFunction();
 //   });
 // });
 
+var mainString = 'hello',
+  subString = 'hell';
+console.log(mainString.includes(subString));
+
 const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
+appDiv.innerHTML = `<h1>JS Examples</h1>`;
