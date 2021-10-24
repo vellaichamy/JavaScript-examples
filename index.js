@@ -174,5 +174,14 @@ var mainString = 'hello',
   subString = 'hell';
 console.log(mainString.includes(subString));
 
+var msg = 'Good morning';
+function greeting() {
+  msg = 'Good Evening';
+  console.log(msg);
+}
+console.log(msg);
+greeting();
+console.log(msg);
+
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Examples</h1>`;
